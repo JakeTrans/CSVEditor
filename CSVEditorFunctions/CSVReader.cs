@@ -8,14 +8,12 @@ namespace CSVEditorFunctions
     public class CSVReader
     {
 
-        public string CurrentFile { get; set; }
-
         DataTable CSVDT;
-
+        CSVFile Currentfile;
         public void ReadFile(string FilePath)
         {
-
-
+            Currentfile = new CSVFile(FilePath);
+            TranslateCSVtoTable();
         }
 
         public void WriteFile(string filepath)
@@ -26,6 +24,21 @@ namespace CSVEditorFunctions
         private void TranslateCSVtoTable()
         {
             CSVDT = new DataTable();
+
+            //header
+            string[] Headers = Currentfile.FileContents[0].Split(',');
+
+            foreach (string Header in Headers)
+            {
+                CSVDT.Columns.Add(Header);
+            }
+
+            //text
+            for (int i = 1; i < Currentfile.FileContents.Count ; i++)
+            {
+                string[] CurrentRow = Currentfile.FileContents[i].Split(',');
+
+            }
         }
 
     }

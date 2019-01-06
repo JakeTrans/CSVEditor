@@ -1,6 +1,6 @@
 ﻿namespace CSVEditor
 {
-    partial class CSVReader
+    partial class CSVReaderUI
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Open";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
