@@ -23,8 +23,15 @@ namespace CSVEditor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CSV.ReadFile(@"C:\csvreadertest\FL_insurance_sample.csv");
-            dgvCSVOutput.DataSource = CSV.CSVDT;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Title = "Select a CSV File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+
+                CSV.ReadFile(openFileDialog1.FileName);
+                dgvCSVOutput.DataSource = CSV.CSVDT;
+            }
         }
     }
 }
