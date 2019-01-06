@@ -8,8 +8,8 @@ namespace CSVEditorFunctions
     public class CSVReader
     {
 
-        DataTable CSVDT;
-        CSVFile Currentfile;
+        public DataTable CSVDT;
+        public CSVFile Currentfile;
         public void ReadFile(string FilePath)
         {
             Currentfile = new CSVFile(FilePath);
@@ -37,7 +37,9 @@ namespace CSVEditorFunctions
             for (int i = 1; i < Currentfile.FileContents.Count ; i++)
             {
                 string[] CurrentRow = Currentfile.FileContents[i].Split(',');
-
+                DataRow dr = CSVDT.NewRow();
+                dr.ItemArray = CurrentRow;
+                CSVDT.Rows.Add(dr);
             }
         }
 

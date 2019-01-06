@@ -24,7 +24,7 @@ namespace CSVEditor
         private void button1_Click(object sender, EventArgs e)
         {
             CSV.ReadFile(@"C:\csvreadertest\FL_insurance_sample.csv");
-
+            dgvCSVOutput.DataSource = CSV.CSVDT;
         }
     }
 }
