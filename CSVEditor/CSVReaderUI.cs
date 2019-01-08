@@ -21,10 +21,12 @@ namespace CSVEditor
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnOpen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Title = "Select a CSV File";
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                Title = "Select a CSV File"
+            };
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -33,5 +35,7 @@ namespace CSVEditor
                 dgvCSVOutput.DataSource = CSV.CSVDT;
             }
         }
+
+
     }
 }
