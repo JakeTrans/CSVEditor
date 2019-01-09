@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSVEditorFunctions
 {
-    public class CSVReader
+    public class CSVEditor
     {
 
         public DataTable CSVDT;

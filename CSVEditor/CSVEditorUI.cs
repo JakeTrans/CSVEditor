@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace CSVEditor
 {
-    public partial class CSVReaderUI : Form
+    public partial class CSVEditorUI : Form
     {
-        CSVReader CSV = new CSVReader();
+        CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
 
 
-        public CSVReaderUI()
+        public CSVEditorUI()
         {
             InitializeComponent();
         }

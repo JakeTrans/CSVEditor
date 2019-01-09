@@ -1,6 +1,6 @@
 ﻿namespace CSVEditor
 {
-    partial class CSVReaderUI
+    partial class CSVEditorUI
     {
         /// <summary>
         /// Required designer variable.
