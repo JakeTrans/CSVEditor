@@ -16,9 +16,35 @@ namespace CSVEditorFunctions
             TranslateCSVtoTable();
         }
 
-        public void WriteFile(string filepath)
+        public void WriteFile()
         {
+            StringBuilder csvfileOutput = new StringBuilder();
+            int ColumnCount = CSVDT.Columns.Count;
 
+
+            //headers
+            foreach (DataColumn column in CSVDT.Columns)
+            {
+                csvfileOutput.Append(column.Caption + ",");
+            }
+            //remove last character
+            csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
+            csvfileOutput.Append(Environment.NewLine);
+
+            foreach (DataRow Row in CSVDT.Rows)
+            {
+                for (int i = 0; i < ColumnCount; i++)
+                {
+                    csvfileOutput.Append(Row[i].ToString() + ",");
+                }
+            }
+            csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
+            csvfileOutput.Append(Environment.NewLine);
+
+
+            System.IO.StreamWriter file = new System.IO.StreamWriter(Currentfile.FileName);
+            file.WriteLine(csvfileOutput.ToString()); // "sb" is the StringBuilder
+            file.Dispose();
         }
 
         private void TranslateCSVtoTable()
@@ -42,6 +68,9 @@ namespace CSVEditorFunctions
                 CSVDT.Rows.Add(dr);
             }
         }
+
+        
+
 
     }
 }

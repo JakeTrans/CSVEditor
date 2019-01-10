@@ -30,6 +30,7 @@
         {
             this.dgvCSVOutput = new System.Windows.Forms.DataGridView();
             this.btnOpenFile = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCSVOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(393, 12);
+            this.btnOpenFile.Location = new System.Drawing.Point(12, 12);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(87, 30);
             this.btnOpenFile.TabIndex = 1;
@@ -52,14 +53,25 @@
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
-            // CSVReaderUI
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(105, 12);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(87, 30);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save File";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // CSVEditorUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.dgvCSVOutput);
-            this.Name = "CSVReaderUI";
+            this.Name = "CSVEditorUI";
             this.Text = "CSV Editor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCSVOutput)).EndInit();
             this.ResumeLayout(false);
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.DataGridView dgvCSVOutput;
         private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
