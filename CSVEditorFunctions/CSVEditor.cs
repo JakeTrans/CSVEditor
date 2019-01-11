@@ -37,10 +37,12 @@ namespace CSVEditorFunctions
                 {
                     csvfileOutput.Append(Row[i].ToString() + ",");
                 }
+                csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
+                csvfileOutput.Append("\r");
             }
-            csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
-            csvfileOutput.Append(Environment.NewLine);
-
+      
+            
+         
 
             System.IO.StreamWriter file = new System.IO.StreamWriter(Currentfile.FileName);
             file.WriteLine(csvfileOutput.ToString()); // "sb" is the StringBuilder
