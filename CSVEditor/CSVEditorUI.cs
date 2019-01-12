@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace CSVEditor
 {
-    public partial class CSVReaderUI : Form
+    public partial class CSVEditorUI : Form
     {
-        CSVReader CSV = new CSVReader();
+        CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
 
 
-        public CSVReaderUI()
+        public CSVEditorUI()
         {
             InitializeComponent();
         }
@@ -30,12 +30,17 @@ namespace CSVEditor
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-
+                TSSLFileStatus.Text = "Loading...";
                 CSV.ReadFile(openFileDialog1.FileName);
                 dgvCSVOutput.DataSource = CSV.CSVDT;
+                TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
+                btnSave.Enabled = true;
             }
         }
 
-
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            CSV.WriteFile();
+        }
     }
 }
