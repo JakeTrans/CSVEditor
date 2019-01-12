@@ -30,9 +30,11 @@ namespace CSVEditor
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-
+                TSSLFileStatus.Text = "Loading...";
                 CSV.ReadFile(openFileDialog1.FileName);
                 dgvCSVOutput.DataSource = CSV.CSVDT;
+                TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
+                btnSave.Enabled = true;
             }
         }
 
