@@ -20,8 +20,6 @@ namespace CSVEditorFunctions
         {
             StringBuilder csvfileOutput = new StringBuilder();
             int ColumnCount = CSVDT.Columns.Count;
-
-
             //headers
             foreach (DataColumn column in CSVDT.Columns)
             {
@@ -40,10 +38,6 @@ namespace CSVEditorFunctions
                 csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
                 csvfileOutput.Append("\r");
             }
-      
-            
-         
-
             System.IO.StreamWriter file = new System.IO.StreamWriter(Currentfile.FileName);
             file.WriteLine(csvfileOutput.ToString()); // "sb" is the StringBuilder
             file.Dispose();

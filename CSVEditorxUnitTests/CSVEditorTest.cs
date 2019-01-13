@@ -1,25 +1,27 @@
+using CSVEditorFunctions;
 using System;
+using System.Data;
+using System.IO;
 using Xunit;
 
 namespace CSVEditorxUnitTests
 {
     public class CSVEditorTest
     {
-        //[Fact]
-        //public void PassingTest()
-        //{
-        //    Assert.Equal(4, Add(2, 2));
-        //}
+        [Fact]
+        public void BaseCsVReadTest()
+        {
+            var filename = "./Resources/FL_insurance_sample.csv";
 
-        //[Fact]
-        //public void FailingTest()
-        //{
-        //    Assert.Equal(5, Add(2, 2));
-        //}
+            CSVEditor CSVEdit = new CSVEditor();
 
-        //int Add(int x, int y)
-        //{
-        //    return x + y;
-        //}
+            CSVEdit.ReadFile(filename);
+
+
+            Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
+            Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
+        }
+
+
     }
 }
