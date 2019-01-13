@@ -16,7 +16,7 @@ namespace CSVEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CSVReaderUI());
+            Application.Run(new CSVEditorUI());
         }
     }
 }
