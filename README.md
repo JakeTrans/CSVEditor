@@ -1,7 +1,7 @@
 # CSVEditor
 A easy to Use CSV Editor to edit CSV files in a Table Format
 
-d Status](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_build/latest?definitionId=2?branchName=master)
+[![Build Status](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_build/latest?definitionId=2?branchName=master)
 
 This is a Basic CSV Tool to allow easy reading of CSV files in a table format and without the issue of Programs like Excel converting number and removing leading zeros.
 
