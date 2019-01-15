@@ -20,8 +20,6 @@ namespace CSVEditorFunctions
         {
             StringBuilder csvfileOutput = new StringBuilder();
             int ColumnCount = CSVDT.Columns.Count;
-
-
             //headers
             foreach (DataColumn column in CSVDT.Columns)
             {
@@ -31,23 +29,28 @@ namespace CSVEditorFunctions
             csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
             csvfileOutput.Append(Environment.NewLine);
 
-            foreach (DataRow Row in CSVDT.Rows)
+            //foreach (DataRow Row in CSVDT.Rows)
+            for (int Row = 0; Row < CSVDT.Rows.Count - 1; Row++)
             {
                 for (int i = 0; i < ColumnCount; i++)
                 {
-                    csvfileOutput.Append(Row[i].ToString() + ",");
+                    csvfileOutput.Append(CSVDT.Rows[Row].ToString() + ",");
                 }
                 csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
                 csvfileOutput.Append("\r");
             }
-      
-            
-         
-
             System.IO.StreamWriter file = new System.IO.StreamWriter(Currentfile.FileName);
             file.WriteLine(csvfileOutput.ToString()); // "sb" is the StringBuilder
             file.Dispose();
         }
+
+
+        public void WriteFile(string NewFilePath)
+        {
+            Currentfile.FileName = NewFilePath;
+            WriteFile();
+        }
+
 
         private void TranslateCSVtoTable()
         {
