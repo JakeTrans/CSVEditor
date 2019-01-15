@@ -18,7 +18,6 @@ namespace CSVEditor
 
         public CSVEditorUI()
         {
-            //
             InitializeComponent();
         }
 
