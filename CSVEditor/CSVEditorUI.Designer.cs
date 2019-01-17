@@ -33,6 +33,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TSSLFileStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnSaveAs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCSVOutput)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,11 +88,23 @@
             this.TSSLFileStatus.Size = new System.Drawing.Size(110, 20);
             this.TSSLFileStatus.Text = "No File Loaded";
             // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.Enabled = false;
+            this.btnSaveAs.Location = new System.Drawing.Point(247, 12);
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(85, 30);
+            this.btnSaveAs.TabIndex = 4;
+            this.btnSaveAs.Text = "Save As";
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
             // CSVEditorUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpenFile);
@@ -113,6 +126,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel TSSLFileStatus;
+        private System.Windows.Forms.Button btnSaveAs;
     }
 }
 
