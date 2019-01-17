@@ -25,8 +25,9 @@ namespace CSVEditor
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                Title = "Select a CSV File"
-            };
+                Title = "Select a CSV File",
+                Filter ="CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+        };
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -48,7 +49,8 @@ namespace CSVEditor
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Title = "Select a Save Location"
+                Title = "Select a Save Location",
+                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
             };
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
