@@ -47,7 +47,7 @@
             this.dgvCSVOutput.Location = new System.Drawing.Point(12, 48);
             this.dgvCSVOutput.Name = "dgvCSVOutput";
             this.dgvCSVOutput.RowTemplate.Height = 24;
-            this.dgvCSVOutput.Size = new System.Drawing.Size(776, 390);
+            this.dgvCSVOutput.Size = new System.Drawing.Size(776, 361);
             this.dgvCSVOutput.TabIndex = 0;
             // 
             // btnOpenFile

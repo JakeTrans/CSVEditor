@@ -35,6 +35,7 @@ namespace CSVEditor
                 dgvCSVOutput.DataSource = CSV.CSVDT;
                 TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
                 btnSave.Enabled = true;
+                btnSaveAs.Enabled = true;
             }
         }
 
@@ -54,7 +55,6 @@ namespace CSVEditor
                 TSSLFileStatus.Text = "Saving...";
                 CSV.WriteFile(saveFileDialog.FileName);
                 TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
-                btnSaveAs.Enabled = true;
             }
         }
     }
