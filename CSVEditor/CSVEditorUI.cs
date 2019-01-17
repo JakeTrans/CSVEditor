@@ -38,16 +38,16 @@ namespace CSVEditor
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             CSV.WriteFile();
         }
 
-        private void btnSaveAs_Click(object sender, EventArgs e)
+        private void BtnSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-               Title = "Select a Save Location"
+                Title = "Select a Save Location"
             };
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -56,5 +56,6 @@ namespace CSVEditor
                 TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
                 btnSaveAs.Enabled = true;
             }
+        }
     }
 }

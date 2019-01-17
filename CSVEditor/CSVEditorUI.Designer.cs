@@ -69,7 +69,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save Current File";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // statusStrip1
             // 
@@ -97,7 +97,7 @@
             this.btnSaveAs.TabIndex = 4;
             this.btnSaveAs.Text = "Save As";
             this.btnSaveAs.UseVisualStyleBackColor = true;
-            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            this.btnSaveAs.Click += new System.EventHandler(this.BtnSaveAs_Click);
             // 
             // CSVEditorUI
             // 
