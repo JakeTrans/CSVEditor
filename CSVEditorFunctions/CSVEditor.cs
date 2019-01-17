@@ -34,7 +34,7 @@ namespace CSVEditorFunctions
             {
                 for (int i = 0; i < ColumnCount; i++)
                 {
-                    csvfileOutput.Append(CSVDT.Rows[Row].ToString() + ",");
+                    csvfileOutput.Append(CSVDT.Rows[Row][i].ToString() + ",");
                 }
                 csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
                 csvfileOutput.Append("\r");

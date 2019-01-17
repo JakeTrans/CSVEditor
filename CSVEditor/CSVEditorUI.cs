@@ -25,8 +25,9 @@ namespace CSVEditor
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                Title = "Select a CSV File"
-            };
+                Title = "Select a CSV File",
+                Filter ="CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+        };
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -35,12 +36,28 @@ namespace CSVEditor
                 dgvCSVOutput.DataSource = CSV.CSVDT;
                 TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
                 btnSave.Enabled = true;
+                btnSaveAs.Enabled = true;
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             CSV.WriteFile();
+        }
+
+        private void BtnSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Title = "Select a Save Location",
+                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+            };
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                TSSLFileStatus.Text = "Saving...";
+                CSV.WriteFile(saveFileDialog.FileName);
+                TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
+            }
         }
     }
 }
