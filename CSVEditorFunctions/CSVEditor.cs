@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Linq;
 
 namespace CSVEditorFunctions
 {
@@ -56,12 +57,35 @@ namespace CSVEditorFunctions
         {
             CSVDT = new DataTable();
 
+            int ColumnCount = 0;
+
+
+            //work out max columns
+
+            foreach (string CurrentLine in Currentfile.FileContents)
+            {
+                int Linecolumncount = CurrentLine.Count(x => x == ',');
+
+                if (Linecolumncount > ColumnCount)
+                {
+                    ColumnCount = Linecolumncount;
+                }
+            }
+
+
             //header
             string[] Headers = Currentfile.FileContents[0].Split(',');
+
 
             foreach (string Header in Headers)
             {
                 CSVDT.Columns.Add(Header);
+            }
+
+            if (Headers.Count() < ColumnCount)
+            {
+                //add extra columns
+                CSVDT.Columns.Add();
             }
 
             //text
