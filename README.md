@@ -1,6 +1,6 @@
 # CSVEditor
 
-[![Build Status](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JakeDamner0722/CSVEditorBuild/_build/latest?definitionId=2?branchName=master)
+[![Build Status](https://dev.azure.com/JTGithubCSVEditorBuild/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JTGithubCSVEditorBuild/CSVEditorBuild/_build/latest?definitionId=2&branchName=master)
 
 A easy to Use CSV Editor to edit CSV files in a Table Format
 
