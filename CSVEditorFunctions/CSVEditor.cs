@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CSVEditorFunctions
 {
@@ -57,7 +58,9 @@ namespace CSVEditorFunctions
             CSVDT = new DataTable();
 
             //header
-            string[] Headers = Currentfile.FileContents[0].Split(',');
+
+            Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            string[] Headers = CSVParser.Split(Currentfile.FileContents[0]);
 
             foreach (string Header in Headers)
             {
@@ -67,7 +70,7 @@ namespace CSVEditorFunctions
             //text
             for (int i = 1; i < Currentfile.FileContents.Count ; i++)
             {
-                string[] CurrentRow = Currentfile.FileContents[i].Split(',');
+                string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[0]);
                 DataRow dr = CSVDT.NewRow();
                 dr.ItemArray = CurrentRow;
                 CSVDT.Rows.Add(dr);
