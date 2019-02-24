@@ -41,5 +41,19 @@ namespace CSVEditorxUnitTests
 
 
         }
+
+        [Fact]
+        public void JaggedCSVWriteTest()
+        {
+
+            string filename = "./Resources/JaggedCSV.csv";
+
+            CSVEditor CSVEdit = new CSVEditor();
+
+            CSVEdit.ReadFile(filename);
+
+            Assert.Equal(4, CSVEdit.CSVDT.Columns.Count);
+            Assert.Equal(3, CSVEdit.CSVDT.Rows.Count);
+        }
     }
 }

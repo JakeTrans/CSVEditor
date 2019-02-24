@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="FL_insurance_sample.csv" />
+    <None Remove="Resources\JaggedCSV.csv" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\FL_insurance_sample.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\JaggedCSV.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
