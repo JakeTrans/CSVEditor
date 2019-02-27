@@ -8,15 +8,28 @@ namespace CSVEditorFunctions
 {
     public class CSVEditor
     {
-
+        /// <summary>
+        /// DataTable Representing the CSV file
+        /// </summary>
         public DataTable CSVDT;
+        /// <summary>
+        /// Base CSV file
+        /// </summary>
         public CSVFile Currentfile;
+
+        /// <summary>
+        /// Read a CSV file in to the Class
+        /// </summary>
+        /// <param name="FilePath">Path of file to load</param>
         public void ReadFile(string FilePath)
         {
             Currentfile = new CSVFile(FilePath);
             TranslateCSVtoTable();
         }
 
+        /// <summary>
+        /// Write the file to the current Filepath
+        /// </summary>
         public void WriteFile()
         {
             StringBuilder csvfileOutput = new StringBuilder();
@@ -45,14 +58,19 @@ namespace CSVEditorFunctions
             file.Dispose();
         }
 
-
+        /// <summary>
+        /// Write the file to a new Filepath
+        /// </summary>
+        /// <param name="NewFilePath">PAth to save the file too</param>
         public void WriteFile(string NewFilePath)
         {
             Currentfile.FileName = NewFilePath;
             WriteFile();
         }
 
-
+        /// <summary>
+        /// Convert the CSV file into a Datatable within the class
+        /// </summary>
         private void TranslateCSVtoTable()
         {
             CSVDT = new DataTable();
