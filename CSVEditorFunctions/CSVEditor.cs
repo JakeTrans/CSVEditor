@@ -88,7 +88,7 @@ namespace CSVEditorFunctions
             //text
             for (int i = 1; i < Currentfile.FileContents.Count ; i++)
             {
-                string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[0]);
+                string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
                 DataRow dr = CSVDT.NewRow();
                 dr.ItemArray = CurrentRow;
                 CSVDT.Rows.Add(dr);
