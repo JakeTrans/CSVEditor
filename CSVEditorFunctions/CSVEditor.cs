@@ -30,14 +30,22 @@ namespace CSVEditorFunctions
         /// <summary>
         /// Write the file to the current Filepath
         /// </summary>
-        public void WriteFile()
+        /// <param name="IncludeQuotationMarks">Should " be added to the file</param>
+        public void WriteFile(bool IncludeQuotationMarks)
         {
             StringBuilder csvfileOutput = new StringBuilder();
             int ColumnCount = CSVDT.Columns.Count;
             //headers
             foreach (DataColumn column in CSVDT.Columns)
             {
-                csvfileOutput.Append(column.Caption + ",");
+                if (IncludeQuotationMarks == true)
+                {
+                    csvfileOutput.Append("\"" + column.Caption + "\"" + ",");
+                }
+                else
+                {
+                    csvfileOutput.Append("\"" + column.Caption + "\"" + ",");
+                }
             }
             //remove last character
             csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
@@ -48,7 +56,14 @@ namespace CSVEditorFunctions
             {
                 for (int i = 0; i < ColumnCount; i++)
                 {
-                    csvfileOutput.Append(CSVDT.Rows[Row][i].ToString() + ",");
+                    if (IncludeQuotationMarks == true)
+                    {
+                        csvfileOutput.Append("\"" + CSVDT.Rows[Row][i].ToString() + "\"" + ",");
+                    }
+                    else
+                    {
+                        csvfileOutput.Append(CSVDT.Rows[Row][i].ToString() + ",");
+                    }
                 }
                 csvfileOutput.Remove(csvfileOutput.Length - 1, 1);
                 csvfileOutput.Append("\r");
@@ -62,10 +77,10 @@ namespace CSVEditorFunctions
         /// Write the file to a new Filepath
         /// </summary>
         /// <param name="NewFilePath">PAth to save the file too</param>
-        public void WriteFile(string NewFilePath)
+        public void WriteFile(string NewFilePath, bool IncludeQuotationMarks)
         {
             Currentfile.FileName = NewFilePath;
-            WriteFile();
+            WriteFile(IncludeQuotationMarks);
         }
 
         /// <summary>

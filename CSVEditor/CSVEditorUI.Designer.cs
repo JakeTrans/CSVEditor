@@ -34,6 +34,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TSSLFileStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSaveAs = new System.Windows.Forms.Button();
+            this.chkAddQuotationMarks = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCSVOutput)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,11 +100,22 @@
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.BtnSaveAs_Click);
             // 
+            // chkAddQuotationMarks
+            // 
+            this.chkAddQuotationMarks.AutoSize = true;
+            this.chkAddQuotationMarks.Location = new System.Drawing.Point(365, 12);
+            this.chkAddQuotationMarks.Name = "chkAddQuotationMarks";
+            this.chkAddQuotationMarks.Size = new System.Drawing.Size(163, 21);
+            this.chkAddQuotationMarks.TabIndex = 5;
+            this.chkAddQuotationMarks.Text = "Add Quotation Marks";
+            this.chkAddQuotationMarks.UseVisualStyleBackColor = true;
+            // 
             // CSVEditorUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkAddQuotationMarks);
             this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSave);
@@ -127,6 +139,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel TSSLFileStatus;
         private System.Windows.Forms.Button btnSaveAs;
+        private System.Windows.Forms.CheckBox chkAddQuotationMarks;
     }
 }
 

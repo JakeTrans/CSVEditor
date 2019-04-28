@@ -42,7 +42,7 @@ namespace CSVEditor
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            CSV.WriteFile();
+            CSV.WriteFile(chkAddQuotationMarks.Checked);
         }
 
         private void BtnSaveAs_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace CSVEditor
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 TSSLFileStatus.Text = "Saving...";
-                CSV.WriteFile(saveFileDialog.FileName);
+                CSV.WriteFile(saveFileDialog.FileName, chkAddQuotationMarks.Checked);
                 TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
             }
         }
