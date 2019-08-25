@@ -5,4 +5,8 @@
 
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\David\Source\Repos\CSVEditor\CSVEditorFunctions\CSVEditorFunctions.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

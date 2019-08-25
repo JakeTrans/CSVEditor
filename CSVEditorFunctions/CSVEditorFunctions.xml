@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSVEditorFunctions</name>
+    </assembly>
+    <members>
+        <member name="F:CSVEditorFunctions.CSVEditor.CSVDT">
+            <summary>
+            DataTable Representing the CSV file
+            </summary>
+        </member>
+        <member name="F:CSVEditorFunctions.CSVEditor.Currentfile">
+            <summary>
+            Base CSV file
+            </summary>
+        </member>
+        <member name="M:CSVEditorFunctions.CSVEditor.ReadFile(System.String)">
+            <summary>
+            Read a CSV file in to the Class
+            </summary>
+            <param name="FilePath">Path of file to load</param>
+        </member>
+        <member name="M:CSVEditorFunctions.CSVEditor.WriteFile(System.Boolean)">
+            <summary>
+            Write the file to the current Filepath
+            </summary>
+            <param name="IncludeQuotationMarks">Should " be added to the file</param>
+        </member>
+        <member name="M:CSVEditorFunctions.CSVEditor.WriteFile(System.String,System.Boolean)">
+            <summary>
+            Write the file to a new Filepath
+            </summary>
+            <param name="NewFilePath">PAth to save the file too</param>
+        </member>
+        <member name="M:CSVEditorFunctions.CSVEditor.TranslateCSVtoTable">
+            <summary>
+            Convert the CSV file into a Datatable within the class
+            </summary>
+        </member>
+        <member name="T:CSVEditorFunctions.CSVFile">
+            <summary>
+            Class Representing a single CSV file
+            </summary>
+        </member>
+        <member name="M:CSVEditorFunctions.CSVFile.#ctor(System.String)">
+            <summary>
+            Open a CSV file into the class
+            </summary>
+            <param name="filePath">Path of the File do load</param>
+        </member>
+        <member name="P:CSVEditorFunctions.CSVFile.FileName">
+            <summary>
+            The File Path
+            </summary>
+        </member>
+        <member name="P:CSVEditorFunctions.CSVFile.FileContents">
+            <summary>
+            CSV file Represented as a list List
+            </summary>
+        </member>
+    </members>
+</doc>
