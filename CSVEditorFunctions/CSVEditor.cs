@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,6 +14,7 @@ namespace CSVEditorFunctions
         /// DataTable Representing the CSV file
         /// </summary>
         public DataTable CSVDT;
+
         /// <summary>
         /// Base CSV file
         /// </summary>
@@ -105,7 +105,7 @@ namespace CSVEditorFunctions
             }
 
             //text
-            for (int i = 1; i < Currentfile.FileContents.Count ; i++)
+            for (int i = 1; i < Currentfile.FileContents.Count; i++)
             {
                 string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
                 DataRow dr = CSVDT.NewRow();
@@ -113,9 +113,5 @@ namespace CSVEditorFunctions
                 CSVDT.Rows.Add(dr);
             }
         }
-
-        
-
-
     }
 }

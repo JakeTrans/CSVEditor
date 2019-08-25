@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace CSVEditorFunctions
 {
@@ -26,6 +24,7 @@ namespace CSVEditorFunctions
                 }
             }
         }
+
         /// <summary>
         /// The File Path
         /// </summary>
@@ -35,9 +34,5 @@ namespace CSVEditorFunctions
         /// CSV file Represented as a list List
         /// </summary>
         public List<string> FileContents { get; set; }
-
-
-
-
     }
 }
