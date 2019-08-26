@@ -1,6 +1,4 @@
 using CSVEditorFunctions;
-using System;
-using System.Data;
 using System.IO;
 using Xunit;
 
@@ -30,7 +28,7 @@ namespace CSVEditorxUnitTests
 
             CSVEdit.ReadFile(filename);
 
-            CSVEdit.WriteFile(destfilename,false);
+            CSVEdit.WriteFile(destfilename, false);
 
             CSVEdit.ReadFile(destfilename);
 
@@ -38,14 +36,11 @@ namespace CSVEditorxUnitTests
 
             Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
             Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
-
-
         }
 
         [Fact]
         public void JaggedCSVWriteTest()
         {
-
             string filename = "./Resources/JaggedCSV.csv";
 
             CSVEditor CSVEdit = new CSVEditor();
@@ -73,8 +68,6 @@ namespace CSVEditorxUnitTests
 
             Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
             Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
-
-
         }
     }
 }

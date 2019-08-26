@@ -1,20 +1,11 @@
-﻿using CSVEditorFunctions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CSVEditor
 {
     public partial class CSVEditorUI : Form
     {
-        CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
-
+        private CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
 
         public CSVEditorUI()
         {
@@ -23,20 +14,21 @@ namespace CSVEditor
 
         private void BtnOpen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
                 Title = "Select a CSV File",
-                Filter ="CSV files (*.csv)|*.csv|All files (*.*)|*.*"
-        };
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+            })
             {
-                TSSLFileStatus.Text = "Loading...";
-                CSV.ReadFile(openFileDialog1.FileName);
-                dgvCSVOutput.DataSource = CSV.CSVDT;
-                TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
-                btnSave.Enabled = true;
-                btnSaveAs.Enabled = true;
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    TSSLFileStatus.Text = "Loading...";
+                    CSV.ReadFile(openFileDialog1.FileName);
+                    dgvCSVOutput.DataSource = CSV.CSVDT;
+                    TSSLFileStatus.Text = "Current File - " + openFileDialog1.FileName;
+                    btnSave.Enabled = true;
+                    btnSaveAs.Enabled = true;
+                }
             }
         }
 
@@ -47,16 +39,18 @@ namespace CSVEditor
 
         private void BtnSaveAs_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Title = "Select a Save Location",
                 Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
-            };
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            })
             {
-                TSSLFileStatus.Text = "Saving...";
-                CSV.WriteFile(saveFileDialog.FileName, chkAddQuotationMarks.Checked);
-                TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
+                if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    TSSLFileStatus.Text = "Saving...";
+                    CSV.WriteFile(saveFileDialog.FileName, chkAddQuotationMarks.Checked);
+                    TSSLFileStatus.Text = "Current File - " + saveFileDialog.FileName;
+                }
             }
         }
     }

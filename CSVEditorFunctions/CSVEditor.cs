@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace CSVEditorFunctions
 {
+    /// <summary>
+    /// Main Class Of the CSV Editor
+    /// </summary>
     public class CSVEditor
     {
         /// <summary>
         /// DataTable Representing the CSV file
         /// </summary>
         public DataTable CSVDT;
+
         /// <summary>
         /// Base CSV file
         /// </summary>
@@ -77,6 +80,7 @@ namespace CSVEditorFunctions
         /// Write the file to a new Filepath
         /// </summary>
         /// <param name="NewFilePath">PAth to save the file too</param>
+        /// <param name="IncludeQuotationMarks">inculde a " at the front and end of each field</param>
         public void WriteFile(string NewFilePath, bool IncludeQuotationMarks)
         {
             Currentfile.FileName = NewFilePath;
@@ -101,7 +105,7 @@ namespace CSVEditorFunctions
             }
 
             //text
-            for (int i = 1; i < Currentfile.FileContents.Count ; i++)
+            for (int i = 1; i < Currentfile.FileContents.Count; i++)
             {
                 string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
                 DataRow dr = CSVDT.NewRow();
@@ -109,9 +113,5 @@ namespace CSVEditorFunctions
                 CSVDT.Rows.Add(dr);
             }
         }
-
-        
-
-
     }
 }
