@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dispose',['Dispose',['../class_c_s_v_editor_1_1_c_s_v_editor_u_i.html#ae30ba2e7518a3d71966178c7bc93b53a',1,'CSVEditor::CSVEditorUI']]]
+  ['readfile',['ReadFile',['../class_c_s_v_editor_functions_1_1_c_s_v_editor.html#a3e754b74dc2ef0897bce0b8edc762da7',1,'CSVEditorFunctions::CSVEditor']]]
 ];

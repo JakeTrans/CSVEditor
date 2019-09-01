@@ -1,12 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "acdfrsw",
-  1: "acrs",
+  0: "cfrw",
+  1: "c",
   2: "c",
-  3: "cdrw",
+  3: "crw",
   4: "c",
-  5: "f",
-  6: "r"
+  5: "f"
 };
 
 var indexSectionNames =
@@ -16,8 +15,7 @@ var indexSectionNames =
   2: "namespaces",
   3: "functions",
   4: "variables",
-  5: "properties",
-  6: "pages"
+  5: "properties"
 };
 
 var indexSectionLabels =
@@ -27,7 +25,6 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Functions",
   4: "Variables",
-  5: "Properties",
-  6: "Pages"
+  5: "Properties"
 };
 
