@@ -47,7 +47,7 @@ namespace CSVEditorFunctions
                 }
                 else
                 {
-                    csvfileOutput.Append("\"" + column.Caption + "\"" + ",");
+                    csvfileOutput.Append(column.Caption + ",");
                 }
             }
             //remove last character
@@ -55,7 +55,7 @@ namespace CSVEditorFunctions
             csvfileOutput.Append(Environment.NewLine);
 
             //foreach (DataRow Row in CSVDT.Rows)
-            for (int Row = 0; Row < CSVDT.Rows.Count - 1; Row++)
+            for (int Row = 0; Row < CSVDT.Rows.Count; Row++)
             {
                 for (int i = 0; i < ColumnCount; i++)
                 {
