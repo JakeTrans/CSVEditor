@@ -35,7 +35,7 @@ namespace CSVEditorxUnitTests
             File.Delete(destfilename);
 
             Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
-            Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
+            Assert.Equal(36636, CSVEdit.CSVDT.Rows.Count);
         }
 
         [Fact]
@@ -67,7 +67,7 @@ namespace CSVEditorxUnitTests
             File.Delete(destfilename);
 
             Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
-            Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
+            Assert.Equal(36636, CSVEdit.CSVDT.Rows.Count);
         }
     }
 }
