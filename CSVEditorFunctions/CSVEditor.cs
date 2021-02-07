@@ -31,6 +31,18 @@ namespace CSVEditorFunctions
         }
 
         /// <summary>
+        /// Convert the CSV file into a Datatable within the class
+        /// </summary>
+        /// <param name="FilePath">Path of file to load</param>
+        /// <param name="RemoveApostrophes">inculde a " at the front and end of each field</param>
+        public void ReadFile(string FilePath, bool RemoveApostrophes = false)
+        {
+            Currentfile = new CSVFile(FilePath);
+
+            TranslateCSVtoTable(RemoveApostrophes); // pass in boolean
+        }
+
+        /// <summary>
         /// Write the file to the current Filepath
         /// </summary>
         /// <param name="IncludeQuotationMarks">Should " be added to the file</param>
@@ -109,6 +121,44 @@ namespace CSVEditorFunctions
                 string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
                 DataRow dr = CSVDT.NewRow();
                 dr.ItemArray = CurrentRow;
+                CSVDT.Rows.Add(dr);
+            }
+        }
+
+        /// <summary>
+        /// Convert the CSV file into a Datatable within the class
+        /// </summary>
+        /// <param name="RemoveApostrophes">Removes all Apostrophes</param>
+        private void TranslateCSVtoTable(bool RemoveApostrophes)
+        {
+            CSVDT = new DataTable();
+
+            //header
+
+            Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            string[] Headers = CSVParser.Split(Currentfile.FileContents[0]);
+
+            foreach (string Header in Headers)
+            {
+                if (RemoveApostrophes == true)
+                    CSVDT.Columns.Add(Header.Replace("'", ""));
+                else
+                    CSVDT.Columns.Add(Header);
+            }
+
+            //text
+            for (int i = 1; i < Currentfile.FileContents.Count; i++)
+            {
+                string[] CurrentRow;
+                if (RemoveApostrophes == true)
+                    CurrentRow = CSVParser.Split(Currentfile.FileContents[i].Replace("'", ""));
+                else
+                    CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
+
+                DataRow dr = CSVDT.NewRow();
+
+                dr.ItemArray = CurrentRow;
+
                 CSVDT.Rows.Add(dr);
             }
         }
