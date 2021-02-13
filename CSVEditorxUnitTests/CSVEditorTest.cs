@@ -20,6 +20,19 @@ namespace CSVEditorxUnitTests
         }
 
         [Fact]
+        public void BaseCSVReadTestWithApostrophes()
+        {
+            string filename = "./Resources/FL_insurance_sample.csv";
+
+            CSVEditor CSVEdit = new CSVEditor();
+
+            CSVEdit.ReadFile(filename, true);
+
+            Assert.Equal(18, CSVEdit.CSVDT.Columns.Count);
+            Assert.Equal(36635, CSVEdit.CSVDT.Rows.Count);
+        }
+
+        [Fact]
         public void BaseCSVWriteTest()
         {
             string filename = "./Resources/FL_insurance_sample.csv";
