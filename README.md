@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/JTGithubCSVEditorBuild/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JTGithubCSVEditorBuild/CSVEditorBuild/_build/latest?definitionId=8&branchName=master)
+[![Build Status](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_build/latest?definitionId=8&branchName=master)
 
 # CSVEditor
 
