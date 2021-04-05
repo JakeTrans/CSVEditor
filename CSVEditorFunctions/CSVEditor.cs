@@ -122,8 +122,12 @@ namespace CSVEditorFunctions
 
                 if (CurrentRow.Length > CSVDT.Columns.Count)
                 {
-                    CSVDT.Columns.Add("");
+                    do
+                    {
+                        CSVDT.Columns.Add("");
+                    } while (CurrentRow.Length > CSVDT.Columns.Count);
                 }
+
                 DataRow dr = CSVDT.NewRow();
                 dr.ItemArray = CurrentRow;
                 CSVDT.Rows.Add(dr);
