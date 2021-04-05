@@ -119,6 +119,11 @@ namespace CSVEditorFunctions
             for (int i = 1; i < Currentfile.FileContents.Count; i++)
             {
                 string[] CurrentRow = CSVParser.Split(Currentfile.FileContents[i]);
+
+                if (CurrentRow.Length > CSVDT.Columns.Count)
+                {
+                    CSVDT.Columns.Add("");
+                }
                 DataRow dr = CSVDT.NewRow();
                 dr.ItemArray = CurrentRow;
                 CSVDT.Rows.Add(dr);
