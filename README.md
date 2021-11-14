@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_build/latest?definitionId=8&branchName=master)
+Azure pipeline status removed as job not functioning since upgrade
 
 # CSVEditor
 
