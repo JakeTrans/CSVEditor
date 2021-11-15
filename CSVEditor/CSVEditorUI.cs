@@ -5,7 +5,7 @@ namespace CSVEditor
 {
     public partial class CSVEditorUI : Form
     {
-        private CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
+        private readonly CSVEditorFunctions.CSVEditor CSV = new CSVEditorFunctions.CSVEditor();
 
         public CSVEditorUI()
         {
