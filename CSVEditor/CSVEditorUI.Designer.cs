@@ -45,17 +45,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCSVOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCSVOutput.Location = new System.Drawing.Point(12, 48);
+            this.dgvCSVOutput.Location = new System.Drawing.Point(9, 39);
+            this.dgvCSVOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCSVOutput.Name = "dgvCSVOutput";
             this.dgvCSVOutput.RowTemplate.Height = 24;
-            this.dgvCSVOutput.Size = new System.Drawing.Size(776, 361);
+            this.dgvCSVOutput.Size = new System.Drawing.Size(582, 293);
             this.dgvCSVOutput.TabIndex = 0;
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(12, 12);
+            this.btnOpenFile.Location = new System.Drawing.Point(9, 10);
+            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(87, 30);
+            this.btnOpenFile.Size = new System.Drawing.Size(65, 24);
             this.btnOpenFile.TabIndex = 1;
             this.btnOpenFile.Text = "Open File";
             this.btnOpenFile.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(105, 12);
+            this.btnSave.Location = new System.Drawing.Point(79, 10);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(136, 30);
+            this.btnSave.Size = new System.Drawing.Size(102, 24);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save Current File";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -77,24 +80,26 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSSLFileStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(600, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // TSSLFileStatus
             // 
             this.TSSLFileStatus.Name = "TSSLFileStatus";
-            this.TSSLFileStatus.Size = new System.Drawing.Size(110, 20);
+            this.TSSLFileStatus.Size = new System.Drawing.Size(86, 17);
             this.TSSLFileStatus.Text = "No File Loaded";
             // 
             // btnSaveAs
             // 
             this.btnSaveAs.Enabled = false;
-            this.btnSaveAs.Location = new System.Drawing.Point(247, 12);
+            this.btnSaveAs.Location = new System.Drawing.Point(185, 10);
+            this.btnSaveAs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(85, 30);
+            this.btnSaveAs.Size = new System.Drawing.Size(64, 24);
             this.btnSaveAs.TabIndex = 4;
             this.btnSaveAs.Text = "Save As";
             this.btnSaveAs.UseVisualStyleBackColor = true;
@@ -103,24 +108,26 @@
             // chkAddQuotationMarks
             // 
             this.chkAddQuotationMarks.AutoSize = true;
-            this.chkAddQuotationMarks.Location = new System.Drawing.Point(365, 12);
+            this.chkAddQuotationMarks.Location = new System.Drawing.Point(274, 10);
+            this.chkAddQuotationMarks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAddQuotationMarks.Name = "chkAddQuotationMarks";
-            this.chkAddQuotationMarks.Size = new System.Drawing.Size(163, 21);
+            this.chkAddQuotationMarks.Size = new System.Drawing.Size(132, 17);
             this.chkAddQuotationMarks.TabIndex = 5;
-            this.chkAddQuotationMarks.Text = "Add Quotation Marks";
+            this.chkAddQuotationMarks.Text = "Add Quotation Marks+";
             this.chkAddQuotationMarks.UseVisualStyleBackColor = true;
             // 
             // CSVEditorUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.chkAddQuotationMarks);
             this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.dgvCSVOutput);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CSVEditorUI";
             this.Text = "CSV Editor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCSVOutput)).EndInit();

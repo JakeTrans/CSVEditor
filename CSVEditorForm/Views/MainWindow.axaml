@@ -8,10 +8,19 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="CSVEditorForm">
 
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+	<Design.DataContext>
+		<vm:MainWindowViewModel />
+	</Design.DataContext>
+	<StackPanel>
+		<!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+		<DockPanel>
+			<Button>Open File</Button>
+			<Button>Save Current File</Button>
+			<Button>Save As</Button>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<CheckBox>Add Quotation Marks</CheckBox>
+		</DockPanel>
 
+		<DataGrid AutoGenerateColumns="True" Items="{Binding People}" />
+	</StackPanel>
 </Window>
