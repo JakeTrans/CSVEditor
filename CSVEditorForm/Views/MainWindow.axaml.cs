@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Data;
 using Avalonia.Markup.Xaml;
+using CSVEditorForm.ViewModels;
 
 namespace CSVEditorForm.Views
 {
