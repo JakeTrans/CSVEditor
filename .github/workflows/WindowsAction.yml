@@ -31,4 +31,3 @@ jobs:
         Write-Host "$command"
         Invoke-Expression $command
       shell: powershell
-                    
