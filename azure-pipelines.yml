@@ -16,7 +16,7 @@ schedules:
 
 
 pool:
-  vmImage: 'windows-2022'
+  vmImage: 'windows-latest'
 
 
 variables:
